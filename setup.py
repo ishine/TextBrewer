@@ -29,7 +29,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="textbrewer",
-    version="0.1.7",
+    version="0.2.1.post1",
     author="ziqingyang",
     author_email="zqyang5@iflytek.com",
     description="PyTorch-based knowledge distillation toolkit for natural language processing",
@@ -38,14 +38,15 @@ setup(
     long_description_content_type="text/markdown",
     keywords="NLP deep learning knowledge distillation pytorch",
     #license="",
-    #url="",
+    url="http://textbrewer.hfl-rc.com",
     #package_dir={"": "src"},
     packages=['textbrewer'],
     package_dir={'':'src'},
     install_requires=[
         "numpy",
         "torch >= 1.1",
-        "tensorboard"
+        "tensorboard",
+        "tqdm"
     ],
 
     python_requires=">=3.6",

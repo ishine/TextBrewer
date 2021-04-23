@@ -76,6 +76,15 @@ class LayerNode:
 
 
 def display_parameters(model,max_level=None):
+    """
+    Display the numbers and memory usage of module parameters.
+
+    Args:
+        model (torch.nn.Module or dict): the model to be inspected.
+        max_level (int or None): The max level to display. If ``max_level==None``, show all the levels.
+    Returns:
+        A formatted string and a :class:`~textbrewer.utils.LayerNode` object representing the model.
+    """
     if isinstance(model,torch.nn.Module):
         state_dict = model.state_dict()
     elif isinstance(model,dict):
@@ -105,6 +114,6 @@ def display_parameters(model,max_level=None):
         current = model_node
 
     result = model_node.format(max_level=max_level)
-    print (result)
+    #print (result)
     return result, model_node
 
